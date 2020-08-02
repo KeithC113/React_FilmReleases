@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FilmList from '../Components/FilmList';
+import "../App.css";
 
 class FilmBox extends Component{
   constructor(props){
@@ -34,18 +35,27 @@ class FilmBox extends Component{
 
     }
 
-  }
+  };
+
   render(){
+    const filmBoxContatiner = {
+      width:'500px',
+      borderStyle:'solid',
+      borderColor:'blue',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      paddingLeft: '16px',
+      paddingRight: '16px'
+
+    };
     return(
-    <div className ="film-box">
-      <h2> Upcoming Film Releases for UK </h2> 
+    <div className ="film-box" style = {filmBoxContatiner}>
+      <h2 style = {{color:'red', textAlign:'center'}}> Upcoming Film Releases for UK </h2>
       <FilmList films={this.state.films}/>
     </div>
     )
   }
 
 }
-
-
 
 export default FilmBox;
